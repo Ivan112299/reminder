@@ -1,0 +1,48 @@
+<form class="form" [formGroup]="reminderForm">
+
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-label>Дата и время создания</mat-label>
+          <input matInput [matDatepicker]="pickerCreate" formControlName="creationTime">
+          <mat-datepicker-toggle matIconSuffix [for]="pickerCreate"></mat-datepicker-toggle>
+          <mat-datepicker #pickerCreate></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <mat-label>Дата и времявыполнения</mat-label>
+          <input matInput [matDatepicker]="pickerExwcute" formControlName="executionTime">
+          <mat-datepicker-toggle matIconSuffix [for]="pickerExwcute"></mat-datepicker-toggle>
+          <mat-datepicker #pickerExwcute></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td><mat-form-field class="full-width">
+          <mat-label for="status">Статус</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statusTranslation" [value]="status[0]">
+              {{status[1]}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></td>
+    </tr>
+  </table>
+
+  <p>
+    <mat-form-field class="full-width">
+      <mat-label for="name">Краткое описание</mat-label>
+      <textarea matInput formControlName="name"></textarea>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label for="description">Полное описание</mat-label>
+      <textarea matInput formControlName="description">y</textarea>
+    </mat-form-field>
+
+  </p>
+
+  <div class="button-row">
+    <button mat-flat-button (click)="onClickCloseForm()">Назад</button>
+    <button mat-flat-button (click)="onClickSaveData()">Сохранить</button>
+  </div>
+</form>

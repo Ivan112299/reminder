@@ -5,25 +5,43 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RemindersComponent } from './components/reminders/reminders.component';
-import { RemindComponent } from './components/remind/remind.component';
-import {MatTableModule} from '@angular/material/table';
+import { ReminderComponent } from './components/remind/reminder.component';
+import { MatTableModule } from '@angular/material/table';
 import { TranslatePipe } from './pipes/translate-status';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button'
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter} from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RemindersComponent,
-    RemindComponent,
+    ReminderComponent,
     TranslatePipe
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    NativeDateAdapter,
+    {provide: MAT_DATE_LOCALE, useValue: 'ru-RU'}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

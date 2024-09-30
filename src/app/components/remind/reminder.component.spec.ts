@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemindComponent } from './remind.component';
+import { ReminderComponent } from './reminder.component';
 
 describe('RemindComponent', () => {
-  let component: RemindComponent;
-  let fixture: ComponentFixture<RemindComponent>;
+  let component: ReminderComponent;
+  let fixture: ComponentFixture<ReminderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemindComponent ]
+      declarations: [ ReminderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RemindComponent);
+    fixture = TestBed.createComponent(ReminderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
